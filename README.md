@@ -21,3 +21,4 @@ Azzembly Language
  * [x] exit code
  * [x] label name
  * [x] rem [your comments]
+ * [x] input $name
