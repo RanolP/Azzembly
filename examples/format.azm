@@ -1,0 +1,3 @@
+set $word world
+set $message Hello, $word$!
+print $message

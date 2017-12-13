@@ -1,0 +1,21 @@
+set $bottle 99
+label verse
+jmpc $bottle <= 1 one
+    print $bottle$ bottles of beer on the wall, $bottle$ bottles of beer.
+    sub $bottle 1
+    jmpc $bottle != 1 else
+        print Take one down and pass it around, 1 bottle of beer on the wall.
+    jmp verse
+    label else
+        print Take one down and pass it around, $bottle$ bottles of beer on the wall.
+    jmp verse
+label one
+jmpc $bottle == 0 no
+    print 1 bottle of beer on the wall, 1 bottle of beer.
+    sub $bottle 1
+    print Take one down and pass it around, no more bottles of beer on the wall.
+jmp verse
+label no
+    print No more bottles of beer on the wall. no more bottles of beer.
+    print Go to the store and buy some more, 99 bottles of beer on the wall.
+jmpc $bottle != 0 verse

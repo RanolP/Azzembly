@@ -12,10 +12,12 @@ Azzembly Language
  * [x] and $name value
  * [x] not $name
  * [x] jmp to
- * [x] jmp< value value to
- * [x] jmp> value value to
- * [x] jmp= value value to
- * [x] jmp! value value to
+ * [x] jmpc value [<, <=, >, >=, ==, !=] value to
+ * [x] if value [<, <=, >, >=, ==, !=] value
+ * [x] else
+ * [x] elif value [<, <=, >, >=, ==, !=] value
+ * [x] endif
  * [x] print value
  * [x] exit code
  * [x] label name
+ * [x] rem [your comments]

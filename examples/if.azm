@@ -1,0 +1,19 @@
+set $test 2
+set $test2 false
+label verse
+print $test$
+if $test == 2
+    if $test2 == false
+        print Now, I am with friend
+        set $test2 true
+        jmp verse
+    elif $test2 == true
+        print Now, We are the world
+    endif
+elif $test == 1
+    print I am only one
+else
+    print You cannot found some people
+endif
+sub $test 1
+jmpc $test >= 0 verse
