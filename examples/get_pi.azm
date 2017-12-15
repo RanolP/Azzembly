@@ -1,0 +1,22 @@
+print loop count:
+input $count
+set $count $count
+set $cursor 1
+set $result 0
+label verse
+set $temp $cursor
+mul $temp 2.0
+sub $temp 1.0
+set $temp2 4.0
+div $temp2 $temp
+set $mod $cursor
+mod $mod 2
+if $mod == 0
+    sub $result $temp2
+else
+    add $result $temp2
+endif
+sub $count 1
+add $cursor 1
+jmpc $count > 0 verse
+print $result$

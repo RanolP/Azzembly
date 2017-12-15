@@ -7,6 +7,7 @@ Azzembly Language
  * [x] sub $name value
  * [x] mul $name value
  * [x] div $name value
+ * [x] mod $name value
  * [x] xor $name value
  * [x] or $name value
  * [x] and $name value

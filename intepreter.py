@@ -37,6 +37,10 @@ def value(string, memory={}):
         else:
             raise AZMError('Memory does not have a value `%s`' % string[1:])
     try:
+        return float(string)
+    except:
+        pass
+    try:
         return int(string)
     except:
         pass
@@ -88,6 +92,11 @@ def mainloop(program):
         if param[0][0] != '$':
             raise AZMError('Variable name must starts with $')
         memory[param[0][1:]] /= value(param[1], memory)
+    def _mod(param):
+        _require(param, 2, 'mod')
+        if param[0][0] != '$':
+            raise AZMError('Variable name must starts with $')
+        memory[param[0][1:]] %= value(param[1], memory)
 
     def _xor(param):
         _require(param, 2, 'xor')
@@ -221,7 +230,7 @@ def mainloop(program):
         else:
             raise AZMError('if block not found')
 
-    commands = {'set': _set, 'add': _add, 'sub': _sub, 'mul': _mul, 'div': _div,
+    commands = {'set': _set, 'add': _add, 'sub': _sub, 'mul': _mul, 'div': _div, 'mod': _mod,
                 'xor': _xor, 'or': _or, 'and': _and, 'not': _not,
                 'jmp': _jmp, 'jmpc': _jmpc, 'input': _input,
                 'if': _if, 'else': _else, 'elif': _elif, 'endif': _endif,
